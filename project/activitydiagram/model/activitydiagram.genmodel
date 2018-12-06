@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/activitydiagram/src" modelPluginID="activitydiagram"
+    modelName="Activitydiagram" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>activitydiagram.emf</foreignModel>
+  <genPackages prefix="Activitydiagram" disposableProviderFactory="true" ecorePackage="activitydiagram.ecore#/">
+    <genClasses ecoreClass="activitydiagram.ecore#//ActivityDiagram">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activitydiagram.ecore#//ActivityDiagram/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/initialNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/finalNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/trasitions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/activityNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/forkNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/joinNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//ActivityDiagram/decisionNodes"/>
+    </genClasses>
+    <genClasses ecoreClass="activitydiagram.ecore#//Transition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activitydiagram.ecore#//Transition/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//Transition/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//Transition/source"/>
+    </genClasses>
+    <genClasses ecoreClass="activitydiagram.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute activitydiagram.ecore#//Node/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//Node/incoming"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference activitydiagram.ecore#//Node/outgoing"/>
+    </genClasses>
+    <genClasses ecoreClass="activitydiagram.ecore#//FinalNode"/>
+    <genClasses ecoreClass="activitydiagram.ecore#//InitialNode"/>
+    <genClasses ecoreClass="activitydiagram.ecore#//ActivityNode"/>
+    <genClasses ecoreClass="activitydiagram.ecore#//DecisionNode"/>
+    <genClasses ecoreClass="activitydiagram.ecore#//ForkNode"/>
+    <genClasses ecoreClass="activitydiagram.ecore#//JoinNode"/>
+  </genPackages>
+</genmodel:GenModel>

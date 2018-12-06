@@ -1,0 +1,59 @@
+@namespace(	uri="activitydiagram", prefix="activitydiagram")
+@gmf
+package activitydiagram;
+
+@gmf.diagram
+class ActivityDiagram{
+	attr String name;
+	val InitialNode initialNode;
+	val FinalNode finalNode;
+	val Transition[*] trasitions;
+	val ActivityNode[*] activityNodes;
+	val ForkNode[*] forkNodes;
+	val JoinNode[*] joinNodes;
+	val DecisionNode[*] decisionNodes;
+}
+
+@gmf.link(source="source", target="target", target.decoration="arrow", source.constraint="self <> oppositeEnd", label="name",  style="solid", color="0,0,0")
+class Transition {
+	attr String name;
+	ref Node#incoming target;
+	ref Node#outgoing source;
+}
+
+class Node {
+	attr String name;
+	ref Transition[0..*]#target incoming;
+	ref Transition[0..*]#source outgoing;
+}
+
+@gmf.node(figure="figures.ActivityDiagramEndFigure", label.placement="none", tool.small.bundle="activitydiagram.edit", tool.small.path="/icons/full/obj16/final.png")
+class FinalNode extends Node{
+	
+}
+
+@gmf.node(figure="figures.ActivityDiagramStartFigure", label.icon="false", label.placement="none", tool.small.bundle="activitydiagram.edit", tool.small.path="/icons/full/obj16/start.png")
+class InitialNode extends Node{
+	
+}
+
+@gmf.node(figure="rounded", border.color="0,0,0", color="255,255,192", label.icon="false", label="name")
+class ActivityNode extends Node{
+	
+}
+
+@gmf.node(figure="figures.ActivityDiagramDecisionFigure", label.placement="none", tool.small.bundle="activitydiagram.edit", tool.small.path="/icons/full/obj16/decision.png")
+class DecisionNode extends Node {
+	
+}
+
+@gmf.node(figure="figures.ActivityDiagramForkFigure", label.placement="none", tool.small.bundle="activitydiagram.edit", tool.small.path="/icons/full/obj16/fork.png")
+class ForkNode extends Node {
+	
+}
+
+@gmf.node(figure="figures.ActivityDiagramJoinFigure", label.placement="none", tool.small.bundle="activitydiagram.edit", tool.small.path="/icons/full/obj16/fork.png")
+class JoinNode extends Node {
+	
+}
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition">
+  <gmfgraph:Canvas name="activitydiagram">
+    <figures name="Default">
+      <figures xsi:type="gmfgraph:PolylineDecoration" name="TransitionFigureTargetDecoration"/>
+      <descriptors name="FinalNodeFigure">
+        <actualFigure xsi:type="gmfgraph:CustomFigure" name="FinalNodeFigure" qualifiedClassName="figures.ActivityDiagramEndFigure"/>
+      </descriptors>
+      <descriptors name="InitialNodeFigure">
+        <actualFigure xsi:type="gmfgraph:CustomFigure" name="InitialNodeFigure" qualifiedClassName="figures.ActivityDiagramStartFigure"/>
+      </descriptors>
+      <descriptors name="ActivityNodeFigure">
+        <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ActivityNodeFigure">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+          <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="192"/>
+          <border xsi:type="gmfgraph:MarginBorder">
+            <insets top="5" left="5" bottom="5" right="5"/>
+          </border>
+          <children xsi:type="gmfgraph:Label" name="ActivityNodeLabelFigure" text="ActivityNode"/>
+        </actualFigure>
+        <accessors accessor="getFigureActivityNodeLabelFigure" figure="/0/@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      </descriptors>
+      <descriptors name="DecisionNodeFigure">
+        <actualFigure xsi:type="gmfgraph:CustomFigure" name="DecisionNodeFigure" qualifiedClassName="figures.ActivityDiagramDecisionFigure"/>
+      </descriptors>
+      <descriptors name="ForkNodeFigure">
+        <actualFigure xsi:type="gmfgraph:CustomFigure" name="ForkNodeFigure" qualifiedClassName="figures.ActivityDiagramForkFigure"/>
+      </descriptors>
+      <descriptors name="JoinNodeFigure">
+        <actualFigure xsi:type="gmfgraph:CustomFigure" name="JoinNodeFigure" qualifiedClassName="figures.ActivityDiagramJoinFigure"/>
+      </descriptors>
+      <descriptors name="TransitionFigure">
+        <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TransitionFigure" targetDecoration="/0/@figures.0/@figures.0">
+          <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+        </actualFigure>
+      </descriptors>
+      <descriptors name="TransitionLabelFigure">
+        <actualFigure xsi:type="gmfgraph:Label" name="TransitionLabelLabel" text="Transition"/>
+      </descriptors>
+    </figures>
+    <nodes name="FinalNode" figure="FinalNodeFigure"/>
+    <nodes name="InitialNode" figure="InitialNodeFigure"/>
+    <nodes name="ActivityNode" figure="ActivityNodeFigure"/>
+    <nodes name="DecisionNode" figure="DecisionNodeFigure"/>
+    <nodes name="ForkNode" figure="ForkNodeFigure"/>
+    <nodes name="JoinNode" figure="JoinNodeFigure"/>
+    <connections name="Transition" figure="TransitionFigure"/>
+    <labels name="ActivityNodeLabel" figure="ActivityNodeFigure" elementIcon="false" accessor="/0/@figures.0/@descriptors.2/@accessors.0"/>
+    <labels name="TransitionLabel" figure="TransitionLabelFigure" elementIcon="false"/>
+  </gmfgraph:Canvas>
+  <gmfgraph:Label name="FinalNodeLabelFigure" text="FinalNode"/>
+  <gmfgraph:Label name="InitialNodeLabelFigure" text="InitialNode"/>
+  <gmfgraph:Label name="DecisionNodeLabelFigure" text="DecisionNode"/>
+  <gmfgraph:Label name="ForkNodeLabelFigure" text="ForkNode"/>
+  <gmfgraph:Label name="JoinNodeLabelFigure" text="JoinNode"/>
+</xmi:XMI>

@@ -1,0 +1,7 @@
+# Tracing options for the activitydiagram.diagram plug-in
+
+# Common issues
+activitydiagram.diagram/debug=false
+
+# Visual IDs
+activitydiagram.diagram/debug/visualID=false
