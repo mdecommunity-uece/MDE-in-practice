@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activitydiagram:ActivityDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:activitydiagram="activitydiagram">
+  <initialNode outgoing="//@trasitions.0"/>
+  <finalNode incoming="//@trasitions.6"/>
+  <trasitions target="//@activityNodes.0" source="//@initialNode"/>
+  <trasitions target="//@decisionNodes.0" source="//@activityNodes.0"/>
+  <trasitions name="" target="//@activityNodes.1" source="//@decisionNodes.0"/>
+  <trasitions target="//@activityNodes.2" source="//@decisionNodes.0"/>
+  <trasitions target="//@decisionNodes.1" source="//@activityNodes.1"/>
+  <trasitions target="//@decisionNodes.1" source="//@activityNodes.2"/>
+  <trasitions target="//@finalNode" source="//@decisionNodes.1"/>
+  <activityNodes name="atividade1" incoming="//@trasitions.0" outgoing="//@trasitions.1"/>
+  <activityNodes name="atividade2" incoming="//@trasitions.2" outgoing="//@trasitions.4"/>
+  <activityNodes name="atvidade3" incoming="//@trasitions.3" outgoing="//@trasitions.5"/>
+  <decisionNodes name="decision1" incoming="//@trasitions.1" outgoing="//@trasitions.2 //@trasitions.3"/>
+  <decisionNodes name="decision2" incoming="//@trasitions.4 //@trasitions.5" outgoing="//@trasitions.6"/>
+</activitydiagram:ActivityDiagram>

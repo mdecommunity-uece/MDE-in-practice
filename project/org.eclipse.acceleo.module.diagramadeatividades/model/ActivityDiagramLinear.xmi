@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activitydiagram:ActivityDiagram
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:activitydiagram="activitydiagram">
+  <initialNode
+      outgoing="//@trasitions.0"/>
+  <finalNode
+      incoming="//@trasitions.2"/>
+  <trasitions
+      source="//@initialNode"/>
+  <trasitions
+      target="//@activityNodes.0"
+      source="//@activityNodes.0"/>
+  <trasitions
+      target="//@finalNode"
+      source="//@activityNodes.1"/>
+  <activityNodes
+      name="Atividade 1"
+      incoming="//@trasitions.1"
+      outgoing="//@trasitions.1"/>
+  <activityNodes
+      name="Atividade 2"
+      outgoing="//@trasitions.2"/>
+</activitydiagram:ActivityDiagram>

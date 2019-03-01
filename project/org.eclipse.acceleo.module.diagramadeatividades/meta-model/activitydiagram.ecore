@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="activitydiagram" nsURI="activitydiagram" nsPrefix="activitydiagram">
+  <eAnnotations source="gmf"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityDiagram">
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initialNode" eType="#//InitialNode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="finalNode" eType="#//FinalNode"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trasitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activityNodes" upperBound="-1"
+        eType="#//ActivityNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="forkNodes" upperBound="-1"
+        eType="#//ForkNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joinNodes" upperBound="-1"
+        eType="#//JoinNode" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decisionNodes" upperBound="-1"
+        eType="#//DecisionNode" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="source"/>
+      <details key="target" value="target"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="source.constraint" value="self &lt;> oppositeEnd"/>
+      <details key="label" value="name"/>
+      <details key="style" value="solid"/>
+      <details key="color" value="0,0,0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Node"
+        eOpposite="#//Node/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Node"
+        eOpposite="#//Node/outgoing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
+        eType="#//Transition" eOpposite="#//Transition/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
+        eType="#//Transition" eOpposite="#//Transition/source"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FinalNode" eSuperTypes="#//Node">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="figures.ActivityDiagramEndFigure"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.small.bundle" value="activitydiagram.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/final.png"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="#//Node">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="figures.ActivityDiagramStartFigure"/>
+      <details key="label.icon" value="false"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.small.bundle" value="activitydiagram.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/start.png"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" eSuperTypes="#//Node">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rounded"/>
+      <details key="border.color" value="0,0,0"/>
+      <details key="color" value="255,255,192"/>
+      <details key="label.icon" value="false"/>
+      <details key="label" value="name"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DecisionNode" eSuperTypes="#//Node">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="figures.ActivityDiagramDecisionFigure"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.small.bundle" value="activitydiagram.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/decision.png"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForkNode" eSuperTypes="#//Node">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="figures.ActivityDiagramForkFigure"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.small.bundle" value="activitydiagram.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/fork.png"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JoinNode" eSuperTypes="#//Node">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="figures.ActivityDiagramJoinFigure"/>
+      <details key="label.placement" value="none"/>
+      <details key="tool.small.bundle" value="activitydiagram.edit"/>
+      <details key="tool.small.path" value="/icons/full/obj16/fork.png"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

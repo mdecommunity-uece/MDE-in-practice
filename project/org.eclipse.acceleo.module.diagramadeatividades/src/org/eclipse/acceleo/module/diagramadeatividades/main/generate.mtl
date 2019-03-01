@@ -1,0 +1,52 @@
+[comment encoding = UTF-8 /]
+[module generate('activitydiagram')]
+
+
+[template public generateElement(activityDiagram : ActivityDiagram)]
+[comment @main/]
+[file (activityDiagram.name.concat('.java'), false, 'UTF-8')]
+package org.eclipse.acceleo.module.diagramadeatividades.main.src-gen;
+	
+public class [activityDiagram.name/] {
+
+	public void run(){
+
+	[for (currentTransition : Transition | activityDiagram.trasitions)]
+		[let currentNode : Node = currentTransition.target]
+			[if (currentNode.oclIsTypeOf(ActivityNode))]
+				[if (not currentTransition.source.oclIsTypeOf(ForkNode))]
+					[currentNode.name/]();
+				[/if]
+				
+			[/if]
+
+			[if (currentNode.oclIsTypeOf(ForkNode))]
+				[for (transition : Transition | currentNode.outgoing)]
+					[let targetNode : Node = transition.target]
+						new Runnable() {
+			
+			@Override
+			public void run() {
+							[targetNode.name/]();
+						}
+		};
+					[/let]
+				[/for]
+			[/if]
+		[/let]
+	[/for]
+
+	}
+
+[for (activityNode : ActivityNode | activityDiagram.activityNodes)]
+	public void [activityNode.name.replace(' ', '')/](){
+	// TODO Auto-generated method stub
+
+	}
+[/for]
+
+
+
+}
+ [/file]
+[/template]

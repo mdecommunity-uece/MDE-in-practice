@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activitydiagram:ActivityDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:activitydiagram="activitydiagram">
+  <initialNode outgoing="//@trasitions.0"/>
+  <finalNode incoming="//@trasitions.6"/>
+  <trasitions target="//@activityNodes.0" source="//@initialNode"/>
+  <trasitions target="//@forkNodes.0" source="//@activityNodes.0"/>
+  <trasitions target="//@activityNodes.1" source="//@forkNodes.0"/>
+  <trasitions target="//@activityNodes.2" source="//@forkNodes.0"/>
+  <trasitions target="//@joinNodes.0" source="//@activityNodes.1"/>
+  <trasitions target="//@joinNodes.0" source="//@activityNodes.2"/>
+  <trasitions target="//@finalNode" source="//@joinNodes.0"/>
+  <activityNodes name="atividade1" incoming="//@trasitions.0" outgoing="//@trasitions.1"/>
+  <activityNodes name="atividade2" incoming="//@trasitions.2" outgoing="//@trasitions.4"/>
+  <activityNodes name="atividade3" incoming="//@trasitions.3" outgoing="//@trasitions.5"/>
+  <forkNodes incoming="//@trasitions.1" outgoing="//@trasitions.2 //@trasitions.3"/>
+  <joinNodes incoming="//@trasitions.4 //@trasitions.5" outgoing="//@trasitions.6"/>
+</activitydiagram:ActivityDiagram>
